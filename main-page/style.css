@@ -280,9 +280,9 @@ nav {
 }
 
 #search-bar {
-    width: max-content;
+    max-width: max-content;
+    width: 40%;
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 1);
     height: 2rem;
@@ -295,7 +295,6 @@ nav {
 }
 
 #search-history {
-    width: 2.5rem;
     height: 2.5rem;
     margin-left: 1rem;
     display: flex;
@@ -312,9 +311,9 @@ nav {
     background: transparent;
     border: none;
     outline: none;
-    width: 15rem;
     font-family: "Fredoka", "Montserrat", 'Segoe UI';
     height: 2rem;
+    width: 100%;
 }
 
 #search-bar:focus-within {
