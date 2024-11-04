@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56" height="48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur" x="-.24684" y="-.27097" width="1.4937" height="1.6939">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="0" dy="4" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA slope="0.05" type="linear" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g transform="translate(-35 -20), scale(2)" filter="url(#blur)">
+    <g transform="translate(0,0)" fill="none" stroke="#57A0EE" stroke-linecap="round" stroke-width="2">
+      <path d="M28 20 Q28 14 32 14 T36 20 Q36 24 32 24 M32 28 L32 30" stroke="#d0d0d0" stroke-width="3" />
+    </g>
+  </g>
+</svg>

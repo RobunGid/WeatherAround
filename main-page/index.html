@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Around Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="../icons/weather-around-icon.png">
+<body>
+    <div id="mask">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <header>
+        <nav>
+            <div id="icon-fa">
+                <a href="index.html"><img src="../icons/weather-around-icon.png" alt="Weather Around Icon" width='56' height='48' height="48" id="icon-fa-image"></a>
+            </div>
+            <div id="search-bar">
+                <div class="material-symbols-outlined">search</div>
+                <input name="address" type="text" placeholder="Enter a place..." id="place-input">
+                <ul id="place-option-container"></ul>
+            </div>
+            <div id="search-history">
+                <button class="material-symbols-outlined" id="search-history-button">history</button>
+
+                <ul id="search-history-option-container">
+                </ul>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+    <div class="full-weather-container">
+        <button type="button" class='btn' id="previous-button"></button>
+        <div class="card-container">
+            
+            <div class="container">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    <button type="button" class='btn' id="next-button"></button>
+</div>
+</main>
+
+
+
+    <script defer src="script.js" type="module"></script>
+</body>
+</html>
