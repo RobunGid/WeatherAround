@@ -522,8 +522,27 @@ nav {
     visibility: hidden;
 }
 
+footer {
+    background-color: rgba(0, 0, 0, .3);
+    height: 75px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+footer hr {
+    margin-top: -3px;
+}
+
+#license {
+    margin: 25px 0px 0px 20px;
+}
+#license a {
+    color: #1c4c5b;
+    text-decoration: none;
+}
+
 .lds-ellipsis {
-    /* change color here */
     color: #1c4c5b
   }
   .lds-ellipsis,
