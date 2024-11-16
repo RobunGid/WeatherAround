@@ -10,23 +10,6 @@ export default function getIcon(weatherData, type='main') {
     const eveningTime = new Date(weatherData.eveningWeather.time);
     const morningTime = new Date(weatherData.morningWeather.time);
 
-
-    // console.log(type, weatherData.datetime)
-    // console.log('Weather code: ' + weatherData.weatherCode)
-    // if (type != 'main') {
-    //     console.log('Rain: ' + weatherData[`${type}Weather`].rain)
-    //     console.log('Cloud cover: ' + weatherData[`${type}Weather`].cloud_cover)
-    //     console.log('Wind speed: ' + weatherData[`${type}Weather`].wind_speed_10m)
-    //     console.log('Sunrise time: ' + weatherData.sunriseTime)
-    //     console.log('Sunset time: ' + weatherData.sunsetTime)
-    //     console.log('Precipitation: ' + weatherData[`${type}Weather`].precipitation)
-    //     } else {
-    //         console.log('Rain: ' + weatherData[`dayWeather`].rain)
-    //         console.log('Cloud cover: ' + weatherData[`dayWeather`].cloud_cover)
-    //         console.log('Wind speed: ' + weatherData[`dayWeather`].wind_speed_10m)
-    //         console.log('Precipitation: ' + weatherData[`dayWeather`].precipitation)
-    //     }
-
     let isDayIcon = false;
     let isNightIcon = false;
     let isMainIcon = false;
@@ -119,8 +102,7 @@ export default function getIcon(weatherData, type='main') {
             return icons['rainy3Icon'].getIconElement()
         }
 
-        if (weatherData['weatherCode'] == 70 ||
-            weatherData['weatherCode'] == 71
+        if (weatherData['weatherCode'] == 70
         ) {
             return icons['snowy1Icon'].getIconElement()
         }
@@ -132,7 +114,8 @@ export default function getIcon(weatherData, type='main') {
         }
 
         if (weatherData['weatherCode'] == 73 ||
-            weatherData['weatherCode'] == 74
+            weatherData['weatherCode'] == 74 ||
+            weatherData['weatherCode'] == 75
         ) {
             return icons['snowy3Icon'].getIconElement()
         }
@@ -203,8 +186,7 @@ export default function getIcon(weatherData, type='main') {
             return icons['rainy3NightIcon'].getIconElement()
         }
 
-        if (weatherData['weatherCode'] == 70 ||
-            weatherData['weatherCode'] == 71
+        if (weatherData['weatherCode'] == 70
         ) {
             return icons['snowy1NightIcon'].getIconElement()
         }
@@ -216,7 +198,8 @@ export default function getIcon(weatherData, type='main') {
         }
 
         if (weatherData['weatherCode'] == 73 ||
-            weatherData['weatherCode'] == 74
+            weatherData['weatherCode'] == 74 ||
+            weatherData['weatherCode'] == 75
         ) {
             return icons['snowy3NightIcon'].getIconElement()
         }
@@ -345,7 +328,8 @@ export default function getIcon(weatherData, type='main') {
         }
 
         if (weatherData['weatherCode'] == 73 ||
-            weatherData['weatherCode'] == 74
+            weatherData['weatherCode'] == 74 ||
+            weatherData['weatherCode'] == 75
         ) {
             return icons['snowy3DayIcon'].getIconElement()
         }
@@ -411,7 +395,6 @@ export default function getIcon(weatherData, type='main') {
         }
 
     }
-
 
 
 

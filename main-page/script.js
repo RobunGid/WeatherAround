@@ -44,4 +44,4 @@ searchHistoryButton.addEventListener('click', functionallySearchHistoryButton)
 
 document.addEventListener('click', functionallyCopyButton);
 
-window.addEventListener('load', windowLoad)
+window.addEventListener('load', windowLoad);

@@ -17,7 +17,6 @@ Day (12PM): ${cardElement.querySelector('.card-hourly .hourly:nth-child(2) .hour
 Evening (6PM): ${cardElement.querySelector('.card-hourly .hourly:nth-child(3) .hourly-temperature').textContent}, ${cardElement.querySelector('.hourly:nth-child(3) .hourly-icon img').title}\n
 Night (12AM): ${cardElement.querySelector('.card-hourly .hourly:nth-child(4) .hourly-temperature').textContent}, ${cardElement.querySelector('.hourly:nth-child(4) .hourly-icon img').title}\n`;
         
-        console.log(copyText)
         navigator.clipboard.writeText(copyText)
         
         setTimeout(() => {

@@ -32,5 +32,4 @@ export default function domContentLoaded(event) {
     } else {
         createUserLocationWeather();
     }
-
 }

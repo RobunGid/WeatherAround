@@ -33,5 +33,5 @@ export default async function retrieveWeatherData(placeData) {
 
     createWeatherCard(weatherData)
 
-
+    console.log(weatherData)
 }
