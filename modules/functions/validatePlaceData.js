@@ -1,5 +1,5 @@
 import createPlaceButtons from "./createPlaceButtons.js"
-import fetchPlaceData from "./fetchPlaceData.js";
+import fetchPlaceData from "./fetchPlaceDataByName.js";
 import placeListRemove from "./placeListRemove.js";
 
 export default async function checkPlaceData (placeData, isList = false) {

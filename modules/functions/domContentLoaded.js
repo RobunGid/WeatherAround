@@ -4,6 +4,8 @@ import createWeatherCard from "./createWeatherCard.js";
 
 import updateCardStyles from "./updateCardStyles.js";
 
+import createUserLocationWeather from "./createUserLocationWeather.js"
+
 export default function domContentLoaded(event) {
 
     // Button to scroll previous card
@@ -13,12 +15,12 @@ export default function domContentLoaded(event) {
     // Place input
     const placeInput = document.querySelector("#place-input");
 
-    updateCardStyles()
+    updateCardStyles();
 
     // updateCardSearchHistory()
 
     if (sessionStorage.getItem('placeListData')) {
-        createPlaceButtons(JSON.parse(sessionStorage.getItem('placeListData')), false)
+        createPlaceButtons(JSON.parse(sessionStorage.getItem('placeListData')), false);
     }
 
     if (sessionStorage.getItem('placeInputData')) {
@@ -26,7 +28,9 @@ export default function domContentLoaded(event) {
     }
 
     if (sessionStorage.getItem('lastWeatherData')) {
-        createWeatherCard(JSON.parse(sessionStorage.getItem('lastWeatherData')))
+        createWeatherCard(JSON.parse(sessionStorage.getItem('lastWeatherData')));
+    } else {
+        createUserLocationWeather();
     }
 
 }

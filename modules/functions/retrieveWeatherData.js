@@ -4,7 +4,7 @@ import fetchWeatherData from "./fetchWeatherData.js";
 
 import structureWeatherData from "./structureWeatherData.js";
 
-export default async function retrieveWeatherData(placeData, event) {
+export default async function retrieveWeatherData(placeData) {
 
     let container = document.querySelector('.container');
     container.innerHTML = '';
