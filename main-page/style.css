@@ -447,7 +447,7 @@ nav {
 #search-history-option-container {
     position: absolute;
     top: 39px;
-    left: 343px;
+    left: 20%;
     list-style-type: none;
     overflow-wrap: break-word;
     visibility: hidden;
