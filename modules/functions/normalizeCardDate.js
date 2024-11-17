@@ -8,9 +8,9 @@ export default function normalizeCardDate(date) {
     '0' + (date.getDate()).toString() :
     (date.getDate()).toString();
 
-    const yearNumber = date.getFullYear()
+    const yearNumber = date.getFullYear();
 
-    const normalizedDate = `${monthNumber}.${dayNumber}.${yearNumber}`
+    const normalizedDate = `${monthNumber}.${dayNumber}.${yearNumber}`;
 
     return normalizedDate;
 }

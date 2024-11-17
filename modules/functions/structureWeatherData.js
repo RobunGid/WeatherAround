@@ -30,8 +30,8 @@ export default function structureWeatherData(rawWeatherData, placeData) {
         weatherDayData['minTemperature'] = rawWeatherData['daily']['temperature_2m_min'][Math.floor(i / 24)];
         weatherDayData['maxTemperature'] = rawWeatherData['daily']['temperature_2m_max'][Math.floor(i / 24)];
     
-        weatherDataArray.push(weatherDayData)
+        weatherDataArray.push(weatherDayData);
     }
 
-    return weatherDataArray
+    return weatherDataArray;
 }

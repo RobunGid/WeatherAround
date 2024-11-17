@@ -3,5 +3,5 @@ export default async function fetchWeatherData({lattitude, longitude}) {
     const response = await fetch(weatherApiUrl);
     const rawWeatherData = await response.json();
 
-    return rawWeatherData
+    return rawWeatherData;
 }

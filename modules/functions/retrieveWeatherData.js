@@ -16,7 +16,7 @@ export default async function retrieveWeatherData(placeData) {
         if (JSON.stringify(placeListHistory).includes(JSON.stringify(placeData))) {
             placeListHistory.splice(placeListHistory.findIndex(item => item.place_id == placeData.place_id), 1);
         } 
-        placeListHistory.unshift(placeData)
+        placeListHistory.unshift(placeData);
         localStorage.setItem('placeListHistory', JSON.stringify(placeListHistory));
         
     } else {
