@@ -1,5 +1,5 @@
 # WeatherAround Forecast
-Modern-looking weather forecast website.
+Modern-looking weather forecast website
 
 This is my first website. Made with native JavaScript, HTML, CSS. Using free API's
 
@@ -19,18 +19,21 @@ This is my first website. Made with native JavaScript, HTML, CSS. Using free API
 - Search history
 - Modern looking weather icons sourced from https://github.com/Makin-Things/weather-icons
 - Automatically saving last weather information
+- Automatically getting user location with ipapi and weather
 
 ## Acknowledgements
 
  - [Nominatim API](https://nominatim.org/)
  - [Open Meteo API](https://open-meteo.com/)
+ - [IPAPI](https://ipapi.co/)
  - [Beautiful weather icons](https://github.com/Makin-Things/weather-icons)
+
 
 
 ## License
 
 This work is licensed under a
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa]
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
