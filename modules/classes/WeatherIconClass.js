@@ -5,7 +5,7 @@ export default class WeatherIcon {
         this.title = title ?? desc; 
         this.ariaLabel = ariaLabel ?? 'Icon: ' + desc;
         this.isAnimated = isAnimated;
-        this.src = `../icons/animated/${this.fileName}`;
+        this.src = `icons/animated/${this.fileName}`;
     }
 
     getIconElement() {
