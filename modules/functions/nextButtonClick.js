@@ -21,13 +21,13 @@ export default function nextButtonClick(event) {
     }
 
     if (!(currentCard.nextElementSibling.nextElementSibling)) {
-        nextButton.classList.add('dis')
+        nextButton.classList.add('dis');
     } else {
-        previousButton.classList.remove('dis')
+        previousButton.classList.remove('dis');
     }
     
     if (!(currentCard.nextElementSibling.nextElementSibling)) {
-        previousButton.classList.remove('dis')
+        previousButton.classList.remove('dis');
     }
 
 

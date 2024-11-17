@@ -15,11 +15,11 @@ export default async function createPlaceButtons(placeList, isSearchHistory = fa
     
             placeButton.textContent = place.display_name;
     
-            placeButton.addEventListener('click', retrieveWeatherData.bind(null, place))
+            placeButton.addEventListener('click', retrieveWeatherData.bind(null, place));
     
-            placeLi.append(placeButton)
+            placeLi.append(placeButton);
     
-            document.querySelector('#search-history-option-container').append(placeLi) 
+            document.querySelector('#search-history-option-container').append(placeLi);
 
         }
     }

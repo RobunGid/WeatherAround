@@ -4,7 +4,7 @@ import createWeatherCard from "./createWeatherCard.js";
 
 import updateCardStyles from "./updateCardStyles.js";
 
-import createUserLocationWeather from "./createUserLocationWeather.js"
+import fetchUserLocationWeather from "./fetchUserLocationWeather.js"
 
 export default function domContentLoaded(event) {
 
@@ -30,6 +30,6 @@ export default function domContentLoaded(event) {
     if (sessionStorage.getItem('lastWeatherData')) {
         createWeatherCard(JSON.parse(sessionStorage.getItem('lastWeatherData')));
     } else {
-        createUserLocationWeather();
+        fetchUserLocationWeather();
     }
 }

@@ -11,7 +11,7 @@ export default function previousButttonClick(event) {
     currentCard.classList.toggle('big');
 
     document.querySelectorAll('.card').forEach(item => {
-        let curTranslate = parseInt(item.style.transform.match(/-?\d+/)[0])
+        let curTranslate = parseInt(item.style.transform.match(/-?\d+/)[0]);
         item.style.transform = `translate(${curTranslate + 250}px)`;
         
     })

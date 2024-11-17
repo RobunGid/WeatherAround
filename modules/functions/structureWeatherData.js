@@ -18,13 +18,13 @@ export default function structureWeatherData(rawWeatherData, placeData) {
         }
         
         weatherDayData['date'] = new Date(weatherDayData['nightWeather']['time']);
-        weatherDayData['datetime'] = rawWeatherData['daily']['time'][Math.floor(i / 24)]
+        weatherDayData['datetime'] = rawWeatherData['daily']['time'][Math.floor(i / 24)];
 
         weatherDayData['day'] = getDay(weatherDayData['date']);
 
         weatherDayData['sunsetTime'] = rawWeatherData['daily']['sunset'][Math.floor(i / 24)];
         weatherDayData['sunriseTime'] = rawWeatherData['daily']['sunrise'][Math.floor(i / 24)];
-        weatherDayData['weatherCode'] = rawWeatherData['daily']['weather_code'][Math.floor(i / 24)]
+        weatherDayData['weatherCode'] = rawWeatherData['daily']['weather_code'][Math.floor(i / 24)];
         weatherDayData['units'] = rawWeatherData['hourly_units'];
         weatherDayData['placeData'] = placeData;
         weatherDayData['minTemperature'] = rawWeatherData['daily']['temperature_2m_min'][Math.floor(i / 24)];

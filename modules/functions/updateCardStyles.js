@@ -14,7 +14,7 @@ export default function updateCardStyle() {
         if (document.querySelectorAll('.card').length === 1) {
             item.style.transform = `translate(${0}px)`
         } else if (document.querySelectorAll('.card').length === 2) {
-            item.style.transform = `translate(${-125 + bigCardIndex * 250}px)`
+            item.style.transform = `translate(${-125 + bigCardIndex * 250}px)`;
         } else if (document.querySelectorAll('.card').length === 3) {
             item.style.transform = `translate(${0 + bigCardIndex * 250}px)`;
         } else if (!(document.querySelectorAll('.card').length & 1)) {
