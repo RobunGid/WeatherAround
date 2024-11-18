@@ -545,7 +545,6 @@ footer hr {
 }
 
 #selected-language::before {
-    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/us.svg);
     display: block;
     height: 24px;
     width: 32px;
@@ -612,16 +611,20 @@ footer hr {
     visibility: visible;
 }   
 
-a[data-lang='ru']::before {
+[data-lang='ru']::before {
     content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/ru.svg);
 }
 
-a[data-lang='kz']::before {
+[data-lang='kz']::before {
     content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/kz.svg);
 }
 
-a[data-lang='il']::before {
+[data-lang='il']::before {
     content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/il.svg);
+}
+
+[data-lang='en']::before {
+    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/us.svg)
 }
 
 #language-picker ul li a:hover {

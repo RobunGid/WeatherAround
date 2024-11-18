@@ -15,6 +15,8 @@ import functionallySearchHistoryButton from "../modules/functions/functionallySe
 
 import windowLoad from "../modules/functions/windowLoad.js";
 
+import changeLanguageFunctionally from "../modules/functions/changeLanguageFunctionally.js";
+
 // Button to scroll previous card
 const previousButton = document.querySelector('#previous-button');
 // Button to scroll next card
@@ -22,7 +24,9 @@ const nextButton = document.querySelector('#next-button');
 // Place input
 const placeInput = document.querySelector("#place-input");
 // History button
-const searchHistoryButton = document.querySelector('#search-history-button')
+const searchHistoryButton = document.querySelector('#search-history-button');
+// Language picker UL
+const languagePickerUL = document.querySelector("#language-picker ul");
 
 previousButton.addEventListener('click', previousButttonClick)
 
@@ -43,5 +47,7 @@ placeInput.addEventListener('input', savePlaceInput);
 searchHistoryButton.addEventListener('click', functionallySearchHistoryButton)
 
 document.addEventListener('click', functionallyCopyButton);
+
+languagePickerUL.addEventListener("click", changeLanguageFunctionally);
 
 window.addEventListener('load', windowLoad);
