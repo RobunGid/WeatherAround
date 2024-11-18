@@ -284,7 +284,7 @@ nav {
     width: 40%;
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: white;
     height: 2rem;
     padding: 5px;
     margin-left: 1rem;
@@ -361,7 +361,7 @@ nav {
     overflow-wrap: break-word;
 }
 
-#place-input:focus ~ #place-option-container {
+#place-input:focus-within ~ #place-option-container {
     visibility: visible;
 }
 
@@ -471,34 +471,11 @@ nav {
 }   
 
 #search-history-button:focus {
+    filter: brightness(90%); 
     background: rgb(225, 225, 225);
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
     border: none;
     outline: none;
 }
-
-
-/* .search-history-option {
-    background-color: white;
-    width: 18rem;
-}
-
-.search-history-option-button {
-    font-size: 1rem;
-    width: 100%;
-    background-color: white;
-    border: none;
-    border-bottom: 1px solid rgb(215, 215, 215);
-    cursor: pointer;
-    font-family: "Fredoka", "Montserrat", 'Segoe UI';
-    text-align: left;
-}
-
-.search-history-option-button:hover {
-    background-color: #c9c9c9;
-} */
 
 #mask {
     width: 100%;
@@ -540,6 +517,122 @@ footer hr {
 #license a {
     color: #1c4c5b;
     text-decoration: none;
+}
+
+#language-picker {
+    margin-left: 1rem;
+}
+
+#selected-language {
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 5px 10px;
+    display: flex;
+    border: 0;
+    cursor: pointer;
+    background: white;
+    transition: background 0.2s;
+    font-family: "Fredoka", "Montserrat", 'Segoe UI';
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    height: 2.5rem;
+    width: calc-size(max-content, 9rem);
+    font-size: 1rem;
+    align-items: center;
+    transition: background 0.2s, filter 0.2s;
+
+}
+
+#selected-language::before {
+    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/us.svg);
+    display: block;
+    height: 24px;
+    width: 32px;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+
+#selected-language:hover {
+    background: rgb(240, 240, 240);
+    filter: brightness(90%); 
+}
+
+#selected-language:focus-within {
+    background: rgb(225, 225, 225);
+    filter: brightness(90%); 
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+}
+
+#language-picker ul {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    position: absolute;
+}
+
+#language-picker ul li {
+    list-style: none;
+}
+
+#language-picker ul li a {
+    width: 125px;
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.2s, filter 0.2s;
+    text-decoration: none;
+    color: black;
+}
+#language-picker ul li a::before {
+    display: block;
+    height: 24px;
+    width: 32px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+#language-picker:focus-within ul, #language-picker:hover ul {
+    visibility: visible;
+}   
+
+a[data-lang='ru']::before {
+    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/ru.svg);
+}
+
+a[data-lang='kz']::before {
+    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/kz.svg);
+}
+
+a[data-lang='il']::before {
+    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/il.svg);
+}
+
+#language-picker ul li a:hover {
+    background: rgb(240, 240, 240);
+    filter: brightness(90%);
+}
+#language-picker ul li {
+    cursor: pointer;
+    line-height: 2;
+    display: flex;
+    justify-content: space-between;
 }
 
 .lds-ellipsis {
