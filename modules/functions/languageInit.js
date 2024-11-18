@@ -1,4 +1,7 @@
-import switchLanguage from './switchLanguage.js'
+import switchLanguage from './switchLanguage.js';
+
+import translate from './translate.js';
+
 export default function languageInit() {
     const siteLanguages = Array.from(document.querySelectorAll('[data-lang]')).map(element => element.dataset.lang);
 
@@ -11,9 +14,9 @@ export default function languageInit() {
     let newLanguage;
 
     if (hashLang && siteLanguages.includes(hashLang)) {
-        newLanguage = hashLang
+        newLanguage = hashLang;
     } else if (localStorageLang && siteLanguages.includes(localStorageLang)) {
-        newLanguage = localStorageLang
+        newLanguage = localStorageLang;
     } else if (userLanguage) {
         newLanguage = userLanguage;
     } else {
@@ -22,4 +25,5 @@ export default function languageInit() {
 
     switchLanguage(newLanguage);
     localStorage.setItem("currentLanguage", newLanguage);
+    translate(document.body)
 }
