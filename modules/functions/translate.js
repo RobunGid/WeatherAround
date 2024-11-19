@@ -1,7 +1,36 @@
 import {translations} from "./translations.js";
 import translateDate from "./translateDate.js";
 
-export default function translate(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang')) {
+export default async function translate(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang')) {
+    function getPlaceholderNodes(nodeElement, attribute) {
+        let nodes = [];
+
+        function recursive(node) {
+            if (node?.dataset?.keyPlaceholderTranslate &&
+                node.getAttribute(attribute)
+            ) {
+                    nodes.push(node);
+            }
+            node.childNodes.forEach(child => recursive(child));
+        }
+        recursive(nodeElement);
+        return nodes;
+    }
+
+    function getIconNodes(nodeElement) {
+        let nodes = [];
+
+        function recursive(node) {
+            if (node.nodeName === 'IMG' &&
+                node.title) {
+                    nodes.push(node);
+            }
+            node.childNodes.forEach(child => recursive(child));
+        }
+        recursive(nodeElement);
+        return nodes;
+    }
+
     function getNodes(nodeElement, attribute) {
         let nodes = [];
 
@@ -9,7 +38,7 @@ export default function translate(element, lang = document.querySelector("#langu
             if (node.nodeType === Node.TEXT_NODE && 
                 node.textContent.trim() !== '' && 
                 node.parentNode.getAttribute(attribute)) {
-            nodes.push(node);
+                    nodes.push(node);
             }
             node.childNodes.forEach(child => recursive(child));
         }
@@ -19,6 +48,8 @@ export default function translate(element, lang = document.querySelector("#langu
 
     let textNodes = getNodes(element, 'data-key-text-content-translate');
     let dateNodes = getNodes(element, 'data-key-datetime-translate');
+    let placeholderNodes = getPlaceholderNodes(element, 'data-key-placeholder-translate');
+    let iconNodes = getIconNodes(element);
 
     textNodes.forEach(node => {
         node.textContent = translations[lang][node.parentNode.dataset.keyTextContentTranslate];
@@ -27,4 +58,16 @@ export default function translate(element, lang = document.querySelector("#langu
     dateNodes.forEach(node => {
         node.textContent = translateDate(node.parentNode.getAttribute("datetime"));
     })
+
+    placeholderNodes.forEach(node => {
+        node.setAttribute('placeholder', translations[lang][node.dataset.keyPlaceholderTranslate])
+    })
+
+    iconNodes.forEach(node => {
+        node.setAttribute('alt', translations[lang][node.dataset.keyAltTranslate]);
+        node.setAttribute('aria-label', translations[lang][node.dataset.keyArialabelTranslate]);
+        node.setAttribute('title', translations[lang][node.dataset.keyTitleTranslate]);
+    })
+
+    
 }

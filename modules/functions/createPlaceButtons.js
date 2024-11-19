@@ -1,6 +1,6 @@
 import retrieveWeatherData from "./retrieveWeatherData.js";
 
-export default async function createPlaceButtons(placeList, isSearchHistory = false) {
+export default async function createPlaceButtons(placeList, isSearchHistory = false, translate = false, lang = document.querySelector("#language-picker button").getAttribute('data-lang')) {
     if (isSearchHistory) {
         if (document.querySelector('#search-history-option-container li')) {
             document.querySelectorAll('#search-history-option-container li').forEach(item => item.remove())

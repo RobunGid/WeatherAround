@@ -25,5 +25,5 @@ export default function languageInit() {
 
     switchLanguage(newLanguage);
     localStorage.setItem("currentLanguage", newLanguage);
-    translate(document.body)
+    translate(document.body);
 }

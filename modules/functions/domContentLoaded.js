@@ -17,8 +17,6 @@ export default function domContentLoaded(event) {
 
     updateCardStyles();
 
-    // updateCardSearchHistory()
-
     if (sessionStorage.getItem('placeListData')) {
         createPlaceButtons(JSON.parse(sessionStorage.getItem('placeListData')), false);
     }

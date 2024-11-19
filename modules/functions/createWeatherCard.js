@@ -10,12 +10,10 @@ import normalizeCardTemperature from "./normalizeCardTemperature.js";
 
 import getIcon from "./getIcon.js";
 
-export default function createWeatherCard(weatherData) {
+export default async function createWeatherCard(weatherData) {
     let container = document.querySelector('.container');
     container.innerHTML = '';
     container.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
-    
-    
     
     for (let weatherDayData of weatherData) {
         // Get info variables
@@ -89,6 +87,7 @@ export default function createWeatherCard(weatherData) {
         const cardWeatherTextDiv = document.createElement('div');
         cardWeatherTextDiv.classList.toggle('card-weather-text');
         cardWeatherTextDiv.textContent = cardWeatherIconDiv.firstElementChild.alt;
+        cardWeatherTextDiv.dataset.keyTextContentTranslate = cardWeatherIconDiv.firstElementChild.alt;
 
         const cardTemperatureDiv = document.createElement('div');
         cardTemperatureDiv.classList.toggle('card-temperature');

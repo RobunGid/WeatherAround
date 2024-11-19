@@ -15,7 +15,10 @@ export default class WeatherIcon {
         img.alt = this.alt;
         img.title = this.title;
         img.ariaLabel = this.ariaLabel;
-        img.setAttribute('data-key-textContent-translate', this.dataKeyTextContentTranslate)
+        img.setAttribute('data-key-alt-translate', this.dataKeyTextContentTranslate);
+        img.setAttribute('data-key-arialabel-translate', this.dataKeyTextContentTranslate);
+        img.setAttribute('data-key-title-translate', this.dataKeyTextContentTranslate);
+
         return img
     }
 }
