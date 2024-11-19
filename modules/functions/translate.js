@@ -1,26 +1,30 @@
 import {translations} from "./translations.js";
+import translateDate from "./translateDate.js";
 
-export default function translate(element) {
-    function getTextNodes() {
-        let textNodes = [];
+export default function translate(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang')) {
+    function getNodes(nodeElement, attribute) {
+        let nodes = [];
 
         function recursive(node) {
             if (node.nodeType === Node.TEXT_NODE && 
                 node.textContent.trim() !== '' && 
-                node.parentNode.getAttribute('data-key-translate')) {
-            textNodes.push(node);
+                node.parentNode.getAttribute(attribute)) {
+            nodes.push(node);
             }
             node.childNodes.forEach(child => recursive(child));
         }
-        recursive(element);
-        return textNodes;
+        recursive(nodeElement);
+        return nodes;
     }
 
-    let textNodes = getTextNodes(element);
-
-    const currentLanguage = localStorage.getItem("currentLanguage")
+    let textNodes = getNodes(element, 'data-key-text-content-translate');
+    let dateNodes = getNodes(element, 'data-key-datetime-translate');
 
     textNodes.forEach(node => {
-        node.textContent = translations[currentLanguage][node.parentNode.dataset.keyTranslate];
+        node.textContent = translations[lang][node.parentNode.dataset.keyTextContentTranslate];
+    })
+
+    dateNodes.forEach(node => {
+        node.textContent = translateDate(node.parentNode.getAttribute("datetime"));
     })
 }

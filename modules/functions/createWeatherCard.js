@@ -43,12 +43,14 @@ export default function createWeatherCard(weatherData) {
         const cardDayDiv = document.createElement('div');
         cardDayDiv.classList.toggle('card-day');
         cardDayDiv.textContent = currentDayOfWeek;
+        cardDayDiv.setAttribute('data-key-text-content-translate', currentDayOfWeek);
 
         const cardDateDiv = document.createElement('div');
         cardDateDiv.classList.toggle('card-date');
         const cardDateTime = document.createElement('time');
         cardDateTime.textContent = currentNormalizedCardDate;
         cardDateTime.dateTime = weatherDayData.datetime;
+        cardDateTime.setAttribute("data-key-datetime-translate", "Date")
         cardDateDiv.append(cardDateTime);
 
         const cardPlaceDiv = document.createElement('div');
@@ -118,7 +120,8 @@ export default function createWeatherCard(weatherData) {
 
             const hourlyTimeDiv = document.createElement('div');
             hourlyTimeDiv.classList.add('hourly-time');
-            hourlyTimeDiv.textContent = part[1]
+            hourlyTimeDiv.textContent = part[1];
+            hourlyTimeDiv.setAttribute("data-key-text-content-translate", part[0][0].toUpperCase() + part[0].substring(1, part[0].length) + " time");
 
             const hourlyTemperatureDiv = document.createElement('div');
             hourlyTemperatureDiv.classList.add('hourly-temperature');
@@ -149,7 +152,7 @@ export default function createWeatherCard(weatherData) {
 
         const copyWindowDiv = document.createElement('div');
         copyWindowDiv.classList.add('copy-window');
-        copyWindowDiv.textContent = ' Copied! '
+        copyWindowDiv.textContent = 'Copied!'
 
         cardFooterDiv.append(copyButton);
         cardFooterDiv.append(copyWindowDiv);

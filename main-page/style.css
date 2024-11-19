@@ -611,20 +611,20 @@ footer hr {
     visibility: visible;
 }   
 
-[data-lang='ru']::before {
+[data-lang='en-US']::before {
+    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/us.svg)
+}
+
+[data-lang='ru-RU']::before {
     content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/ru.svg);
 }
 
-[data-lang='kz']::before {
+[data-lang='kk-KZ']::before {
     content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/kz.svg);
 }
 
-[data-lang='il']::before {
+[data-lang='he-IL']::before {
     content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/il.svg);
-}
-
-[data-lang='en']::before {
-    content: url(https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/us.svg)
 }
 
 #language-picker ul li a:hover {

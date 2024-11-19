@@ -4,5 +4,5 @@ export default function switchLanguage(lang) {
 
     [currentLangElement.dataset.lang, selectedLangElement.dataset.lang] = [selectedLangElement.dataset.lang, currentLangElement.dataset.lang];
     [selectedLangElement.textContent, currentLangElement.textContent] = [currentLangElement.textContent, selectedLangElement.textContent];
-    [currentLangElement.dataset.keyTranslate, selectedLangElement.dataset.keyTranslate] = [selectedLangElement.dataset.keyTranslate, currentLangElement.dataset.keyTranslate]
+    [currentLangElement.dataset.keyTextContentTranslate, selectedLangElement.dataset.keyTextContentTranslate] = [selectedLangElement.dataset.keyTextContentTranslate, currentLangElement.dataset.keyTextContentTranslate]
 }

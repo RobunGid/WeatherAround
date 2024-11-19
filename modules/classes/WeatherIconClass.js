@@ -6,6 +6,7 @@ export default class WeatherIcon {
         this.ariaLabel = ariaLabel ?? 'Icon: ' + desc;
         this.isAnimated = isAnimated;
         this.src = `icons/animated/${this.fileName}`;
+        this.dataKeyTextContentTranslate = title ?? desc;
     }
 
     getIconElement() {
@@ -14,6 +15,7 @@ export default class WeatherIcon {
         img.alt = this.alt;
         img.title = this.title;
         img.ariaLabel = this.ariaLabel;
+        img.setAttribute('data-key-textContent-translate', this.dataKeyTextContentTranslate)
         return img
     }
 }
