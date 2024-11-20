@@ -25,9 +25,7 @@ export default function domContentLoaded(event) {
         placeInput.value = sessionStorage.getItem('placeInputData');
     }
 
-    if (sessionStorage.getItem('lastWeatherData')) {
-        createWeatherCard(JSON.parse(sessionStorage.getItem('lastWeatherData')));
-    } else {
+    if (!sessionStorage.getItem('lastWeatherData')) {
         fetchUserLocationWeather();
     }
 }

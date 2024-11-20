@@ -1,7 +1,22 @@
 import {translations} from "./translations.js";
 import translateDate from "./translateDate.js";
 
+import translatePlaceData from "./translatePlaceData.js";
+import createWeatherCard from "./createWeatherCard.js";
+
 export default async function translate(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang')) {
+    const lastWeatherData = JSON.parse(sessionStorage.getItem('lastWeatherData'));
+
+    const lastWeatherPlaceData = lastWeatherData[0].placeData;
+
+    const translatedLastWeatherPlaceData = await translatePlaceData([lastWeatherPlaceData]);
+
+    const translatedLastWeatherData = lastWeatherData.map(item => {
+        item.placeData = translatedLastWeatherPlaceData[0];
+        return item;
+    })
+    createWeatherCard(translatedLastWeatherData);
+    
     function getPlaceholderNodes(nodeElement, attribute) {
         let nodes = [];
 
@@ -68,6 +83,4 @@ export default async function translate(element, lang = document.querySelector("
         node.setAttribute('aria-label', translations[lang][node.dataset.keyArialabelTranslate]);
         node.setAttribute('title', translations[lang][node.dataset.keyTitleTranslate]);
     })
-
-    
 }
