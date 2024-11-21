@@ -1,6 +1,6 @@
 import switchLanguage from './switchLanguage.js';
 
-import translate from './translate.js';
+import translatePage from './translatePage.js';
 
 export default function languageInit() {
     const siteLanguages = Array.from(document.querySelectorAll('[data-lang]')).map(element => element.dataset.lang);
@@ -25,5 +25,5 @@ export default function languageInit() {
 
     switchLanguage(newLanguage);
     localStorage.setItem("currentLanguage", newLanguage);
-    translate(document.body);
+    translatePage(document.body);
 }

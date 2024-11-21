@@ -2,21 +2,33 @@ import {translations} from "./translations.js";
 import translateDate from "./translateDate.js";
 
 import translatePlaceData from "./translatePlaceData.js";
+
 import createWeatherCard from "./createWeatherCard.js";
 
-export default async function translate(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang')) {
-    const lastWeatherData = JSON.parse(sessionStorage.getItem('lastWeatherData'));
+export default async function translatePage(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang'), isOnlyTextNodes = false) {
+    if (!isOnlyTextNodes) {
+        try {
+        if (sessionStorage.getItem('lastWeatherData')) {
+            const lastWeatherData = JSON.parse(sessionStorage.getItem('lastWeatherData'));
 
-    const lastWeatherPlaceData = lastWeatherData[0].placeData;
+            const lastWeatherPlaceData = lastWeatherData[0].placeData;
 
-    const translatedLastWeatherPlaceData = await translatePlaceData([lastWeatherPlaceData]);
+            const translatedLastWeatherPlaceData = await translatePlaceData([lastWeatherPlaceData]);
 
-    const translatedLastWeatherData = lastWeatherData.map(item => {
-        item.placeData = translatedLastWeatherPlaceData[0];
-        return item;
-    })
-    createWeatherCard(translatedLastWeatherData);
+            const translatedLastWeatherData = lastWeatherData.map(item => {
+                item.placeData = translatedLastWeatherPlaceData[0];
+                return item;
+            })
+            createWeatherCard(translatedLastWeatherData);
+        }
+        
+    } catch(error) {
+        console.error(error);
+    }
     
+    }
+    
+
     function getPlaceholderNodes(nodeElement, attribute) {
         let nodes = [];
 

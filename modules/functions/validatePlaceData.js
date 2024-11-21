@@ -4,7 +4,7 @@ import placeListRemove from "./placeListRemove.js";
 
 export default async function checkPlaceData (placeData, isList = false) {
     if (isList) {
-        createPlaceButtons(placeData)
+        createPlaceButtons(placeData);
     } else {
         placeListRemove();
         const placeName = placeData.trim();

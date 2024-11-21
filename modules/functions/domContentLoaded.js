@@ -1,6 +1,6 @@
 import createPlaceButtons from "./createPlaceButtons.js";
 
-import createWeatherCard from "./createWeatherCard.js";
+import languageInit from "./languageInit.js";
 
 import updateCardStyles from "./updateCardStyles.js";
 
