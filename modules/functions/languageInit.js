@@ -5,11 +5,12 @@ import translatePage from './translatePage.js';
 export default function languageInit() {
     const siteLanguages = Array.from(document.querySelectorAll('[data-lang]')).map(element => element.dataset.lang);
 
-    const hashLang = window.location.hash.substring(1, 3); 
+    const hashLang = window.location.hash;
 
     const localStorageLang = localStorage.getItem("currentLanguage");
 
-    const userLanguage = navigator.language;
+    const userLanguage = siteLanguages.find(element => element.startsWith(navigator.language));
+    console.log(userLanguage)
 
     let newLanguage;
 
@@ -22,7 +23,7 @@ export default function languageInit() {
     } else {
         newLanguage = 'en';
     }
-
+    
     switchLanguage(newLanguage);
     localStorage.setItem("currentLanguage", newLanguage);
     translatePage(document.body);
