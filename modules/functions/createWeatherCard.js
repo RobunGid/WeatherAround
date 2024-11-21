@@ -151,7 +151,8 @@ export default async function createWeatherCard(weatherData) {
 
         const copyWindowDiv = document.createElement('div');
         copyWindowDiv.classList.add('copy-window');
-        copyWindowDiv.textContent = 'Copied!'
+        copyWindowDiv.textContent = 'Copied!';
+        copyWindowDiv.setAttribute('data-key-text-content-translate', 'Copied!')
 
         cardFooterDiv.append(copyButton);
         cardFooterDiv.append(copyWindowDiv);
