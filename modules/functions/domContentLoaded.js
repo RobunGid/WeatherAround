@@ -1,6 +1,6 @@
 import createPlaceButtons from "./createPlaceButtons.js";
 
-import createWeatherCard from "./createWeatherCard.js";
+import languageInit from "./languageInit.js";
 
 import updateCardStyles from "./updateCardStyles.js";
 
@@ -17,8 +17,6 @@ export default function domContentLoaded(event) {
 
     updateCardStyles();
 
-    // updateCardSearchHistory()
-
     if (sessionStorage.getItem('placeListData')) {
         createPlaceButtons(JSON.parse(sessionStorage.getItem('placeListData')), false);
     }
@@ -27,9 +25,7 @@ export default function domContentLoaded(event) {
         placeInput.value = sessionStorage.getItem('placeInputData');
     }
 
-    if (sessionStorage.getItem('lastWeatherData')) {
-        createWeatherCard(JSON.parse(sessionStorage.getItem('lastWeatherData')));
-    } else {
+    if (!sessionStorage.getItem('lastWeatherData')) {
         fetchUserLocationWeather();
     }
 }

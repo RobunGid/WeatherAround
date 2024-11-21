@@ -22,13 +22,27 @@
             </div>
             <div id="search-bar">
                 <div class="material-symbols-outlined">search</div>
-                <input name="address" type="text" placeholder="Enter a place..." id="place-input">
+                <input name="place" type="text" data-key-placeholder-translate="Place input" placeholder="Enter a place..." id="place-input">
                 <ul id="place-option-container"></ul>
             </div>
             <div id="search-history">
                 <button class="material-symbols-outlined" id="search-history-button">history</button>
 
                 <ul id="search-history-option-container">
+                </ul>
+            </div>
+            <div id="language-picker">
+                <button type="button" id="selected-language" data-lang="en-US" data-key-text-content-translate="English">English</button>
+                <ul>
+                    <li>
+                        <a data-lang="ru-RU" href="#" data-key-text-content-translate="Russian">Russian</a>
+                    </li>
+                    <li>
+                        <a data-lang="kk-KZ" href="#" data-key-text-content-translate="Kazakh">Kazakh</a>
+                    </li>
+                    <li>
+                        <a data-lang="he-IL" href="#" data-key-text-content-translate="Hebrew">Hebrew</a>
+                    </li>
                 </ul>
             </div>
             
