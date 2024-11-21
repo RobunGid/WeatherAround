@@ -19,13 +19,15 @@ This is my first website. Made with native JavaScript, HTML, CSS. Using free API
 - Search history
 - Modern looking weather icons sourced from https://github.com/Makin-Things/weather-icons
 - Automatically saving last weather information
-- Automatically getting user location with ipapi and weather
+- Automatically getting user location with ipapi
+- Translate api provides translation on all pages
 
 ## Acknowledgements
 
  - [Nominatim API](https://nominatim.org/)
  - [Open Meteo API](https://open-meteo.com/)
  - [IPAPI](https://ipapi.co/)
+ - [Lingva API](https://github.com/thedaviddelta/lingva-translate)
  - [Beautiful weather icons](https://github.com/Makin-Things/weather-icons)
 
 
