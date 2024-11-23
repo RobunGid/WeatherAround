@@ -1,10 +1,8 @@
 import createPlaceButtons from "./createPlaceButtons.js";
-
-import languageInit from "./languageInit.js";
+import fetchUserLocationWeather from "./fetchUserLocationWeather.js";
 
 import updateCardStyles from "./updateCardStyles.js";
 
-import fetchUserLocationWeather from "./fetchUserLocationWeather.js"
 
 export default function domContentLoaded(event) {
 
@@ -28,4 +26,7 @@ export default function domContentLoaded(event) {
     if (!sessionStorage.getItem('lastWeatherData')) {
         fetchUserLocationWeather();
     }
+      
+
+    
 }

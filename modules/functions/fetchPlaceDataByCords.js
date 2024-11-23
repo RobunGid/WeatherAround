@@ -1,4 +1,4 @@
-export default async function fetchPlaceData(lat, lon) {
+export default async function fetchPlaceDataByCords(lat, lon) {
 
 const openStreetMapApiUrl = `https://nominatim.openstreetmap.org/reverse?
 lat=${lat}&
