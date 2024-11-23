@@ -24,7 +24,7 @@ export default function structureWeatherData(rawWeatherData, placeData) {
 
         weatherDayData['sunsetTime'] = rawWeatherData['daily']['sunset'][Math.floor(i / 24)];
         weatherDayData['sunriseTime'] = rawWeatherData['daily']['sunrise'][Math.floor(i / 24)];
-        weatherDayData['weatherCode'] = rawWeatherData['daily']['weather_code'][Math.floor(i / 24)];
+        weatherDayData['weather_code'] = rawWeatherData['daily']['weather_code'][Math.floor(i / 24)];
         weatherDayData['units'] = rawWeatherData['hourly_units'];
         weatherDayData['placeData'] = placeData;
         weatherDayData['minTemperature'] = rawWeatherData['daily']['temperature_2m_min'][Math.floor(i / 24)];
