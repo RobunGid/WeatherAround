@@ -5,15 +5,16 @@ export default async function fetchUserLocationWeather() {
     if (navigator.geolocation) {
 
         async function getLocationSuccess(position) {
-            console.log(position)
             const userLat = position.coords.latitude;
             const userLon = position.coords.longitude;
             const placeData = await fetchPlaceDataByCords(userLat, userLon);
             retrieveWeatherData(placeData);
+            return;
         }
 
         function getLocationError(error) {
-            console.error(error)
+            console.error(error);
+            return;
         }
 
         const getLocationOptions = {
@@ -22,12 +23,13 @@ export default async function fetchUserLocationWeather() {
             timeout: 27000,
         }
         navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, getLocationOptions);
-    } else {
-        const response = await fetch("https://ipapi.co/json/");
-        const userPlaceData = await response.json();
-        const userLat = userPlaceData.latitude;
-        const userLon = userPlaceData.longitude;
-        const placeData = await fetchPlaceDataByCords(userLat, userLon);
-        retrieveWeatherData(placeData);
+        return;
     }
+    const response = await fetch("https://ipapi.co/json/");
+    const userPlaceData = await response.json();
+    const userLat = userPlaceData.latitude;
+    const userLon = userPlaceData.longitude;
+    const placeData = await fetchPlaceDataByCords(userLat, userLon);
+    retrieveWeatherData(placeData);
+
 }
