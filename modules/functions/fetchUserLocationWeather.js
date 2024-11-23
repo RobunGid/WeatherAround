@@ -14,7 +14,6 @@ export default async function fetchUserLocationWeather() {
 
         function getLocationError(error) {
             console.error(error);
-            return;
         }
 
         const getLocationOptions = {
@@ -23,7 +22,6 @@ export default async function fetchUserLocationWeather() {
             timeout: 27000,
         }
         navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, getLocationOptions);
-        return;
     }
     const response = await fetch("https://ipapi.co/json/");
     const userPlaceData = await response.json();
