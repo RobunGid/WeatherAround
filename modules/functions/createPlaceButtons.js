@@ -31,7 +31,6 @@ export default async function createPlaceButtons(placeList, isSearchHistory = fa
     if (!isSearchHistory) {
         if (translate) {
             placeList = await translatePlaceData(placeList);
-            console.log(placeList)
         }
         if (document.querySelector('#place-option-container li')) {
             document.querySelectorAll('#place-option-container li').forEach(item => item.remove())

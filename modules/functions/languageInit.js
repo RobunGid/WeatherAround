@@ -10,7 +10,6 @@ export default function languageInit() {
     const localStorageLang = localStorage.getItem("currentLanguage");
 
     const userLanguage = siteLanguages.find(element => element.startsWith(navigator.language));
-    console.log(userLanguage)
 
     let newLanguage;
 
