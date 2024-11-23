@@ -134,7 +134,7 @@ body {
 .card-weather-text {
     text-align: center;
     overflow: hidden;
-    height: 2rem;
+    height: 1.9rem;
     overflow: visible;
 }
 
@@ -448,11 +448,10 @@ nav {
 #search-history-option-container {
     position: absolute;
     top: 39px;
-    left: calc(10vw + 4%);
+    left: 250px;
     list-style-type: none;
     overflow-wrap: break-word;
     visibility: hidden;
-    right: 0;
 }
 
 #search-history-button {
@@ -675,6 +674,9 @@ footer hr {
         margin: 0;
         padding: 0;
         margin-left: 5px;
+    }
+    #search-history-option-container {
+        left: 15%;
     }
   }
 
