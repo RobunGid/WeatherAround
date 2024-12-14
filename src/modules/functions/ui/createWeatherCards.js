@@ -1,6 +1,9 @@
 import { WeatherCard } from "../../classes/weatherCard.js";
+import { getSiteLanguage } from "../language/getSiteLanguage.js";
+import { translatePage } from "../language/translatePage.js";
 
-export function createWeatherCards({ weatherData }) {
+export function createWeatherCards({ weatherData, placeData }) {
+    const language = getSiteLanguage();
     const weatherDaysData = [];
     for (let i = 0; i < 14; i++) {
         const weatherDayData = {
@@ -27,13 +30,15 @@ export function createWeatherCards({ weatherData }) {
     }
     const weatherCards = [];
     weatherDaysData.forEach((weatherDayData, index) => {
-        weatherCards.push(new WeatherCard({ weatherDayData, index })) ;
+        weatherCards.push(new WeatherCard({ weatherDayData, placeData, index })) ;
     })
     
     const cardContainer = document.querySelector(".card-container .container");
     cardContainer.innerHTML = '';
     
     weatherCards.forEach(weatherCard => {
-        console.log(weatherCard)
+        cardContainer.append(weatherCard.getWeatherCardElement())
     })
+    
+    translatePage({ language });
 }

@@ -3,5 +3,5 @@ import { createWeatherCards } from "../ui/createWeatherCards.js";
 
 export async function handlePlaceOptionButtonClick({ placeData }) {
     const weatherData = await fetchWeatherDataByPlaceData({ placeData });
-    createWeatherCards({ weatherData })
+    createWeatherCards({ weatherData, placeData })
 }

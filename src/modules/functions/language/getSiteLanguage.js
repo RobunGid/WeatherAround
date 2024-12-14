@@ -1,4 +1,4 @@
-export function getSiteLanguage(event) {
+export function getSiteLanguage() {
     const siteLanguages = Array.from(document.querySelectorAll('[data-lang]')).map(element => element.dataset.lang);
 
     const hashLanguageFull = window.location.hash;

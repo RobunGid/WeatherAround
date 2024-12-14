@@ -1,5 +1,6 @@
 import { translations } from "../../data/translation.js";
-import { getSiteLanguage } from "./getSiteLanguage.js";
+import { initPlaceHover } from "../inits/initPlaceHover.js";
+import { translateDate } from "./translateDate.js";
 
 export function translatePage({ language }) {
     const translatableTextNodes = getTextNodes({ element: document });
@@ -16,7 +17,7 @@ export function translatePage({ language }) {
         node.setAttribute('title', translations[language][node.dataset.keyTitleTranslate]);
     })
 
-
+    initPlaceHover();
 
     function getTextNodes({ element }) {
         let nodes = [];
@@ -80,19 +81,6 @@ export function translatePage({ language }) {
         }
         recursive(element);
         return nodes;
-    }
-
-
-
-    function translateDate({ dateString }) {
-        const date = new Date(dateString);
-        date.setDate(date.getDate() + 1);
-        const formattedDate = new Intl.DateTimeFormat(language, {
-            year: 'numeric',
-            month: 'numeric', 
-            day: 'numeric'
-        }).format(date);
-        return formattedDate;
     }
 
 }

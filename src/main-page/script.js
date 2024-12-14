@@ -5,9 +5,9 @@ import { handlePlaceInput } from "../modules/functions/handlers/handlePlaceInput
 import { handlePreviousButtonClick } from "../modules/functions/handlers/handlePreviousButtonClick.js";
 import { handleSwitchLanguageButtonClick } from "../modules/functions/handlers/handleSwitchLanguageButtonClick.js";
 import { initPlaceList } from "../modules/functions/inits/initPlaceList.js";
-import { switchLanguage } from "../modules/functions/language/switchLanguage.js";
 import { handleSavePlaceInput } from '../modules/functions/handlers/handleSavePlaceInput.js'
 import { initSiteLanguage } from "../modules/functions/inits/initSiteLanguage.js";
+import { initPlaceHover } from "../modules/functions/inits/initPlaceHover.js";
 
 const previousButtonElement = document.querySelector("#previous-button");
 const nextButtonElement = document.querySelector("#next-button");
@@ -23,6 +23,7 @@ languagePickerElement.addEventListener('click', handleSwitchLanguageButtonClick)
 
 document.addEventListener('DOMContentLoaded', initSiteLanguage);
 document.addEventListener('DOMContentLoaded', initPlaceList);
+document.addEventListener('DOMContentLoaded', initPlaceHover);
 
 placeInputElement.addEventListener('input', (event => {
     let timeout = null;
