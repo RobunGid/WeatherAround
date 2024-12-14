@@ -13,4 +13,5 @@ export function switchLanguage({ language }) {
     localStorage.setItem('currentLanguage', siteLanguage);
 
     location.href = window.location.pathname + '#' + siteLanguage;
+
 }

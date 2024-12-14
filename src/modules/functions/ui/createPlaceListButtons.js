@@ -1,3 +1,5 @@
+import { handlePlaceOptionButtonClick } from "../handlers/handlePlaceOptionButtonClick.js";
+
 export function createPlaceListButtons({ placeListData }) {
     document.querySelector('#place-option-container').innerHTML = '';
     placeListData.forEach(placeData => {
@@ -8,7 +10,8 @@ export function createPlaceListButtons({ placeListData }) {
         const placeOptionButton = document.createElement('button');
         placeOptionButton.classList.toggle('place-option-button');
         placeOptionButton.type = 'button';
-        placeOptionButton.textContent = placeData.translated_display_name
+        placeOptionButton.textContent = placeData.translated_display_name;
+        placeOptionButton.addEventListener('click', handlePlaceOptionButtonClick.bind(null, {placeData}))
 
         placeOptionLi.append(placeOptionButton);
 

@@ -6,5 +6,8 @@ export function handleSwitchLanguageButtonClick(event) {
 
     switchLanguage({ language: clickedElement.dataset.lang });
     
+    sessionStorage.removeItem('placeInputValue');
+    sessionStorage.removeItem('placeListData');
+
     location.reload();
 }

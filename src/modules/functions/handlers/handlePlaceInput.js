@@ -11,8 +11,8 @@ export async function handlePlaceInput(event) {
     if (!validateRegEx.test(placeSearchText)) return;
     
     const placeListData = await fetchPlaceListByPlaceName({ placeName: placeSearchText });
-    
     const translatedPlaceListData = await fetchTranslatePlaceListData({ placeListData });
+
     createPlaceListButtons({ placeListData: translatedPlaceListData });
 
     sessionStorage.setItem('placeListData', JSON.stringify(translatedPlaceListData));
