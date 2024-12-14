@@ -162,7 +162,7 @@ export const translations = {"en-US": {
     "Morning (6AM) copy button": "Утро (6:00)",
     "Day (12PM) copy button": "День (12:00)",
     "Evening (6PM) copy button": "Вечер (18:00)",
-    "Night (12AM) copy button": "Ночь (00:00)",
+    "Night (12AM) copy button": "Ночь (24:00)",
 },
 "kk-KZ": {
     "English": "Ағылшын",
@@ -245,7 +245,7 @@ export const translations = {"en-US": {
     "Morning (6AM) copy button": "Таң (6:00)",
     "Day (12PM) copy button": "Күндіз (12:00)",
     "Evening (6PM) copy button": "Кеш (18:00)",
-    "Night (12AM) copy button": "Түн (00:00)",
+    "Night (12AM) copy button": "Түн (24:00)",
 },
 "he-IL": {
     "English": "אנגלית",
@@ -328,6 +328,6 @@ export const translations = {"en-US": {
     "Morning (6AM) copy button": "בוקר (6:00)",
     "Day (12PM) copy button": "יום (12:00)",
     "Evening (6PM) copy button": "ערב (18:00)",
-    "Night (12AM) copy button": "לילה (00:00)",
+    "Night (12AM) copy button": "לילה (24:00)",
 }
 }

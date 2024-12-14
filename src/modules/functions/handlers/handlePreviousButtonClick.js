@@ -9,16 +9,16 @@ export function handlePreviousButtonClick(event) {
     const newTranslateValue = -cardSize * (currentCardIndex - 7) + 125
 
     if (currentCardElement.dataset.index == 1) {
-        previousButtonElement.classList.add('dis')
+        previousButtonElement.classList.add('dis');
     } else {
-        nextButtonElement.classList.remove('dis')
+        nextButtonElement.classList.remove('dis');
     }
         
     if (currentCardElement.dataset.index == 0) return;
 
-    allCardsElements.forEach(cardElement => cardElement.style.transform = `translate(${newTranslateValue}px)`)
+    allCardsElements.forEach(cardElement => cardElement.style.transform = `translate(${newTranslateValue}px)`);
 
-    currentCardElement.classList.remove('main')
+    currentCardElement.classList.remove('main');
 
     const newCurrentCard = allCardsElements[parseInt(currentCardIndex) - 1];
     
