@@ -596,7 +596,6 @@ footer hr {
     color: black;
 }
 #language-picker ul li a::before {
-    display: block;
     height: 24px;
     width: 32px;
     background-repeat: no-repeat;
