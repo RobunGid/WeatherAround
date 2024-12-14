@@ -23,7 +23,6 @@ languagePickerElement.addEventListener('click', handleSwitchLanguageButtonClick)
 
 document.addEventListener('DOMContentLoaded', initSiteLanguage);
 document.addEventListener('DOMContentLoaded', initPlaceList);
-document.addEventListener('DOMContentLoaded', initPlaceHover);
 
 placeInputElement.addEventListener('input', (event => {
     let timeout = null;

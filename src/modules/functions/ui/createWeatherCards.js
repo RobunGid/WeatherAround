@@ -16,9 +16,9 @@ export function createWeatherCards({ weatherData, placeData }) {
             temperature_2m_max: weatherData.daily.temperature_2m_max[i],
             temperature_2m_min: weatherData.daily.temperature_2m_min[i],
             time: weatherData.daily.time[i],
-            weatherCode: weatherData.daily.weather_code[i],
-            dailyUnits: weatherData.daily_units,
-            hourlyUnits: weatherData.hourly_units,
+            weather_code: weatherData.daily.weather_code[i],
+            daily_units: weatherData.daily_units,
+            hourly_units: weatherData.hourly_units,
             hourly: {},
         }
         Object.entries(weatherData.hourly).forEach(entry => {

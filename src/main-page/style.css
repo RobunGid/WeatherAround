@@ -136,6 +136,7 @@ body {
     overflow: hidden;
     height: 1.9rem;
     overflow: visible;
+    line-height: 110%;
 }
 
 .card-temperature {
