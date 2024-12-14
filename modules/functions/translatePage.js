@@ -5,9 +5,8 @@ import translatePlaceData from "./translatePlaceData.js";
 
 import createWeatherCard from "./createWeatherCard.js";
 
-export default async function translatePage(element, lang = document.querySelector("#language-picker button").getAttribute('data-lang'), isOnlyTextNodes = false) {
+export default async function translatePage(element, isOnlyTextNodes = false) {
     if (!isOnlyTextNodes) {
-        try {
         if (sessionStorage.getItem('lastWeatherData')) {
             const lastWeatherData = JSON.parse(sessionStorage.getItem('lastWeatherData'));
 
@@ -21,11 +20,6 @@ export default async function translatePage(element, lang = document.querySelect
             })
             createWeatherCard(translatedLastWeatherData);
         }
-        
-    } catch(error) {
-        console.error(error);
-    }
-    
     }
     
 
