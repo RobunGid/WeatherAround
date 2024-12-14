@@ -4,5 +4,7 @@ export function handleSwitchLanguageButtonClick(event) {
     const clickedElement = event.target;
     if (clickedElement.tagName !== 'A') return;
 
-    switchLanguage({ language: clickedElement.dataset.lang })
+    switchLanguage({ language: clickedElement.dataset.lang });
+    
+    location.reload();
 }
