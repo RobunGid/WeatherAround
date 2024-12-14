@@ -1,6 +1,7 @@
 import { getSiteLanguage } from "../language/getSiteLanguage.js";
 
 export async function fetchTranslatePlaceListData({ placeListData }) {
+    if (!!placeListData && placeListData?.length == 0) return [] 
 
     const API_LANGUAGES = {
         'ru-RU': 'ru',
@@ -23,4 +24,5 @@ export async function fetchTranslatePlaceListData({ placeListData }) {
         ...placeData, 'translated_display_name': translatedPlaceList[index]
     }))
     return translatedPlaceListData
+
 }

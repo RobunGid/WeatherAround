@@ -3,12 +3,15 @@ import { fetchPlaceListByPlaceName } from "../fetchs/fetchPlaceListByName.js";
 import { fetchTranslatePlaceListData } from "../fetchs/fetchTranslatePlaceListData.js";
 
 export async function handlePlaceInput(event) {
-    if (document.querySelector('#place-option-container li')) {
-        document.querySelectorAll('#place-option-container li').forEach(item => item.remove())
-    }
-    
+    const validateRegEx = /^(?=.*[\p{L}\p{N}])[\p{L}\p{M}\p{Zs}\p{P}\p{N}]+$/u;
     const placeSearchText = event.target.value;
+
+    document.querySelector('#place-option-container').innerHTML = '';
+
+    if (!validateRegEx.test(placeSearchText)) return;
+    
     const placeListData = await fetchPlaceListByPlaceName({ placeName: placeSearchText });
+    
     const translatedPlaceListData = await fetchTranslatePlaceListData({ placeListData });
     createPlaceListButtons({ placeListData: translatedPlaceListData });
 

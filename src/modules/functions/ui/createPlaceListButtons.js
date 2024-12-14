@@ -1,5 +1,5 @@
 export function createPlaceListButtons({ placeListData }) {
-
+    document.querySelector('#place-option-container').innerHTML = '';
     placeListData.forEach(placeData => {
         const placeOptionLi = document.createElement('li');
 
