@@ -7,7 +7,8 @@ import { handleSwitchLanguageButtonClick } from "../modules/functions/handlers/h
 import { initPlaceList } from "../modules/functions/inits/initPlaceList.js";
 import { handleSavePlaceInput } from '../modules/functions/handlers/handleSavePlaceInput.js'
 import { initSiteLanguage } from "../modules/functions/inits/initSiteLanguage.js";
-import { initPlaceHover } from "../modules/functions/inits/initPlaceHover.js";
+import { initSearchHistory } from "../modules/functions/inits/initSearchHistory.js";
+import { initUserLocalWeather } from "../modules/functions/inits/initUserLocalWeather.js";
 
 const previousButtonElement = document.querySelector("#previous-button");
 const nextButtonElement = document.querySelector("#next-button");
@@ -23,6 +24,8 @@ languagePickerElement.addEventListener('click', handleSwitchLanguageButtonClick)
 
 document.addEventListener('DOMContentLoaded', initSiteLanguage);
 document.addEventListener('DOMContentLoaded', initPlaceList);
+document.addEventListener('DOMContentLoaded', initSearchHistory);
+document.addEventListener('DOMContentLoaded', initUserLocalWeather);
 
 placeInputElement.addEventListener('input', (event => {
     let timeout = null;

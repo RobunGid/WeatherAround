@@ -1,7 +1,9 @@
 import { handlePlaceOptionButtonClick } from "../handlers/handlePlaceOptionButtonClick.js";
 
-export function createPlaceListButtons({ placeListData }) {
-    document.querySelector('#place-option-container').innerHTML = '';
+export function createPlaceListButtons({ placeListData, isSearchHistory }) {
+    isSearchHistory 
+    ? document.querySelector('#search-history-option-container').innerHTML = ''
+    : document.querySelector('#place-option-container').innerHTML = '';
     placeListData.forEach(placeData => {
         const placeOptionLi = document.createElement('li');
 
@@ -15,7 +17,9 @@ export function createPlaceListButtons({ placeListData }) {
 
         placeOptionLi.append(placeOptionButton);
 
-        document.querySelector('#place-option-container').append(placeOptionLi);
+        isSearchHistory 
+        ? document.querySelector('#search-history-option-container').append(placeOptionLi)
+        : document.querySelector('#place-option-container').append(placeOptionLi);
     })
 
 }

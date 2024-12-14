@@ -1,5 +1,5 @@
 import { createPlaceListButtons } from "../ui/createPlaceListButtons.js";
-import { fetchPlaceListByPlaceName } from "../fetchs/fetchPlaceListByName.js";
+import { fetchPlaceListDataByPlaceName } from "../fetchs/fetchPlaceListDataByName.js";
 import { fetchTranslatePlaceListData } from "../fetchs/fetchTranslatePlaceListData.js";
 
 export async function handlePlaceInput(event) {
@@ -10,7 +10,7 @@ export async function handlePlaceInput(event) {
 
     if (!validateRegEx.test(placeSearchText)) return;
     
-    const placeListData = await fetchPlaceListByPlaceName({ placeName: placeSearchText });
+    const placeListData = await fetchPlaceListDataByPlaceName({ placeName: placeSearchText });
     const translatedPlaceListData = await fetchTranslatePlaceListData({ placeListData });
 
     createPlaceListButtons({ placeListData: translatedPlaceListData });

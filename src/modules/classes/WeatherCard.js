@@ -27,7 +27,6 @@ export class WeatherCard {
     }
 
     getWeatherCardElement() {
-        console.log(this.weatherDayData)
         const dayOfTheWeek = formatDayOfTheWeek({ dateString: this.weatherDayData.time });
 
         const shortCardPlace = formatShortCardPlace({ placeName: this.placeData.translated_display_name });

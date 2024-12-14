@@ -1,4 +1,4 @@
-export async function fetchPlaceListByPlaceName({ placeName }) {
+export async function fetchPlaceListDataByPlaceName({ placeName }) {
     const openStreetMapApiUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(placeName)}&format=json&featureType=city&limit=8`;
     try {
         const response = await fetch(openStreetMapApiUrl);
