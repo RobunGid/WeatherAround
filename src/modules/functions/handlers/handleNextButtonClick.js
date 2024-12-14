@@ -15,9 +15,9 @@ export function handleNextButtonClick(event) {
     }
     if (currentCardElement.dataset.index == allCardsElements.length - 1) return;
 
-    allCardsElements.forEach(cardElement => cardElement.style.transform = `translate(${newTranslateValue}px)`)
+    allCardsElements.forEach(cardElement => cardElement.style.transform = `translate(${newTranslateValue}px)`);
 
-    currentCardElement.classList.remove('main')
+    currentCardElement.classList.remove('main');
 
     const newCurrentCard = allCardsElements[parseInt(currentCardIndex) + 1];
     

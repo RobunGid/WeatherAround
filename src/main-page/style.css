@@ -355,7 +355,7 @@ nav {
 #place-option-container {
     position: absolute;
     top: 39px;
-    left: 40px;
+    left: 25px;
     list-style-type: none;
     visibility: hidden;
     transition: visibility 0.1s;
@@ -448,7 +448,7 @@ nav {
 #search-history-option-container {
     position: absolute;
     top: 39px;
-    left: 250px;
+    left: 240px;
     list-style-type: none;
     overflow-wrap: break-word;
     visibility: hidden;

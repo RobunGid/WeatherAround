@@ -6,5 +6,5 @@ export async function fetchWeatherDataByPlaceData({ placeData }) {
     const response = await fetch(weatherApiUrl);
     const weatherData = await response.json();
 
-    return weatherData
+    return weatherData;
 }

@@ -5,6 +5,7 @@ import { createWeatherCards } from "../ui/createWeatherCards.js";
 export async function handlePlaceOptionButtonClick({ placeData }) {
     const weatherData = await fetchWeatherDataByPlaceData({ placeData });
     createWeatherCards({ weatherData, placeData });
+    localStorage.setItem('lastPlaceData', JSON.stringify(placeData))
 
     if (localStorage.getItem('searchHistoryListData')) {
         const searchHistoryListData = JSON.parse(localStorage.getItem('searchHistoryListData'));

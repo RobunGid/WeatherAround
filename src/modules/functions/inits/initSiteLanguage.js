@@ -5,5 +5,5 @@ import { translatePage } from "../language/translatePage.js";
 export function initSiteLanguage() {
     const siteLanguage = getSiteLanguage();
     switchLanguage({ language: siteLanguage });
-    translatePage({ language: siteLanguage })
+    translatePage({ language: siteLanguage });
 }

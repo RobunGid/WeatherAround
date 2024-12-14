@@ -1,6 +1,6 @@
 import { switchLanguage } from "../language/switchLanguage.js";
 
-export function handleSwitchLanguageButtonClick(event) {
+export function handleChangeLanguageButtonClick(event) {
     const clickedElement = event.target;
     if (clickedElement.tagName !== 'A') return;
 
@@ -8,6 +8,7 @@ export function handleSwitchLanguageButtonClick(event) {
     
     sessionStorage.removeItem('placeInputValue');
     sessionStorage.removeItem('placeListData');
+    localStorage.removeItem('lastPlaceData');
 
     location.reload();
 }

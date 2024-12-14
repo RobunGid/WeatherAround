@@ -5,6 +5,9 @@ import { fetchTranslatePlaceListData } from '../fetchs/fetchTranslatePlaceListDa
 
 export async function initUserLocalWeather() {
     let finished = false;
+
+    if (localStorage.getItem('lastPlaceData')) return;
+
     if (navigator.geolocation) {
 
         async function getLocationSuccess(position) {
@@ -14,15 +17,12 @@ export async function initUserLocalWeather() {
             finished = true;
         }
 
-        function getLocationError(error) {
-        }
-
         const getLocationOptions = {
             enableHighAccuracy: true,
             maximumAge: 30000,
             timeout: 27000,
         }
-        navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, getLocationOptions);
+        navigator.geolocation.getCurrentPosition(getLocationSuccess, () => {}, getLocationOptions);
     }
 
     if (!finished) {
@@ -31,10 +31,11 @@ export async function initUserLocalWeather() {
         const userLatitude = userPlace.latitude;
         const userLongitude = userPlace.longitude;
         const userPlaceData = await fetchPlaceListDataByCords({ latitude: userLatitude, longitude: userLongitude });
-        const translatedUserPlaceData = await fetchTranslatePlaceListData({placeListData: [userPlaceData]})
-        const weatherData = await fetchWeatherDataByPlaceData({ placeData: translatedUserPlaceData[0] })
-        createWeatherCards({ weatherData, placeData: translatedUserPlaceData[0]})
-        
+        const translatedUserPlaceData = await fetchTranslatePlaceListData({placeListData: [userPlaceData]});
+        const weatherData = await fetchWeatherDataByPlaceData({ placeData: translatedUserPlaceData[0] });
+        createWeatherCards({ weatherData, placeData: translatedUserPlaceData[0]});
+
+        localStorage.setItem('lastPlaceData', JSON.stringify(translatedUserPlaceData[0]))
     } 
     
 
