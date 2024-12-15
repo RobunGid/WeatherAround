@@ -4,9 +4,13 @@ Modern-looking weather forecast website
 This is my first website. Made with native JavaScript, HTML, CSS. Using free API's
 
 ## Screenshots
-![App Screenshot](https://i.ibb.co/4g17pfj/image.png)
-![App Screenshot](https://i.ibb.co/Jk5JB7P/image.png)
-![App Screenshot](https://i.ibb.co/b7M0QDh/image.png)
+![App Screenshot](https://i.ibb.co/LQSJpPF/site1.png)
+![App Screenshot](https://i.ibb.co/2v2BDvp/site2.png)
+![App Screenshot](https://i.ibb.co/930W6qm/site3.png)
+![App Screenshot](https://i.ibb.co/RHVsYyf/site4.png)
+![App Screenshot](https://i.ibb.co/X2wSJX1/site5.png)
+![App Screenshot](https://i.ibb.co/R9cJtFQ/site6.png)
+
 
 ## Features
 
@@ -21,6 +25,7 @@ This is my first website. Made with native JavaScript, HTML, CSS. Using free API
 - Automatically saving last weather information
 - Automatically getting user location with ipapi
 - Translate api provides translation on all pages
+- Full i18n supporting English, Russian, Kazakh, and Hebrew with automatic language detection and manual toggle.
 
 ## Acknowledgements
 
