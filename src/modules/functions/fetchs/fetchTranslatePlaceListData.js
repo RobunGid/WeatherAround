@@ -17,7 +17,9 @@ export async function fetchTranslatePlaceListData({ placeListData }) {
     const API_URL = `https://translate.plausibility.cloud/api/v1/auto/${formattedSiteLanguage}/${encodeURIComponent(placeNames)}`;
 
     const response = await fetch(API_URL);
+    
     const { translation } = await response.json();
+
     const translatedPlaceList = translation.split('\n');
 
     const translatedPlaceListData = placeListData.map((placeData, index) => ({
